@@ -1,5 +1,5 @@
-body{
-    background-color:black;
+body {
+    background-color: black;
     color: azure;
     display: grid;
     grid-template-columns: auto 800px auto;
@@ -8,39 +8,56 @@ body{
 
 
 
-#mainTitle{
+#mainTitle {
     grid-column-start: 2;
     grid-row-start: 1;
     text-align: center;
 }
 
- #gameWindow{
-    position:relative;
-    width:800px;
+#gameWindow {
+    position: relative;
+    width: 800px;
     height: 608px;
     grid-column-start: 2;
     grid-row-start: 2;
     background-color: blue;
- }
+}
 
- .background{
+.background {
     position: absolute;
     z-index: 0;
- }
- .character{
+}
+
+.character {
     position: absolute;
     z-index: 100;
- }
+}
 
- .foreground{
+.foreground {
     position: absolute;
     z-index: 1000;
- }
+}
 
- #tilemap{}
+#tilemap {}
 
- #mainCharacter{
+#mainCharacter {
     top: 160px;
     left: 392px;
     transition: all 1s ease-in-out;
- }
+}
+
+#doorOne {
+    top: 722px;
+    left: 45px;
+    width: 42px;
+    height: 40px;
+    background-color: white;
+}
+
+#doorTwo {
+    top: 723px;
+    left: 194px;
+    width: 42px;
+    height: 40px;
+    background-color: white;
+}
