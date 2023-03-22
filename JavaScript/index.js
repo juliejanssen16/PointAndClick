@@ -6,6 +6,8 @@ const offsetCharacter = 16;
 const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
 
+const characterAudio = document.getElementById(characterAudio);
+
 gameWindow.onclick = function (e) {
     var rect = gameWindow.getBoundingClientRect();
     var x = e.clientX - rect.left;
@@ -18,6 +20,7 @@ gameWindow.onclick = function (e) {
     console.log(e.target.id);
     switch (e.target.id) {
         case "doorOne":
+            characterAudio.play();
             console.log("this is door one");
             // something insert here
             break;
