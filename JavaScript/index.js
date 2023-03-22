@@ -3,7 +3,7 @@ document.getElementById("mainTitle").style.textAlign= "center";
 
 const offsetCharacter = 16; 
 
-const mainCharacter = documet.getElementById("mainCharacter");
+const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
 
 gameWindow.onclick = function(e){
