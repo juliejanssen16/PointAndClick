@@ -17,10 +17,12 @@ gameWindow.onclick = function (e) {
 
     console.log(x);
 
-    console.log(e.target.id);
+    //console.log(e.target.id);
+    showSpeech("Does this work?"); 
+
     switch (e.target.id) {
         case "doorOne":
-            characterAudio.play();
+            // characterAudio.play();
             console.log("this is door one");
             // something insert here
             break;
@@ -35,4 +37,8 @@ gameWindow.onclick = function (e) {
             // do something when it doesn't have a case
             break;
     }
+}
+const mainCharacterSpeech = document.getElementById(textBubbleMC);
+function showSpeech(dialog){
+    mainCharacterSpeech.innerText = dialog; 
 }

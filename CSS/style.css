@@ -61,3 +61,29 @@ body {
     height: 40px;
     background-color: white;
 }
+
+.messageBox {
+    position: relative;
+    background: #dedbdb;
+    border-radius: 60px;
+    color: #000;
+    padding: 6px;
+    font-size: 12px;
+    left: 8px;
+    top: -5px;
+}
+
+.messageBoxAfter {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #ffffff;
+    border-bottom: 0;
+    border-left: 0;
+    margin-left: -5px;
+    margin-bottom: -10px;
+}
