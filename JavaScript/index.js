@@ -6,7 +6,7 @@ const offsetCharacter = 16;
 const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
 
-const characterAudio = document.getElementById(characterAudio);
+const characterAudio = document.getElementById("characterAudio");
 
 gameWindow.onclick = function (e) {
     var rect = gameWindow.getBoundingClientRect();
@@ -18,27 +18,28 @@ gameWindow.onclick = function (e) {
     console.log(x);
 
     //console.log(e.target.id);
-    showSpeech("Does this work?"); 
+    showSpeech("Does this work?");
 
     switch (e.target.id) {
         case "doorOne":
             // characterAudio.play();
-            console.log("this is door one");
+            showSpeech("this is door one");
             // something insert here
             break;
 
         case "doorTwo":
-            console.log("this is door two");
+            showSpeech("this is door two");
             // something insert here
             break;
 
         default:
-            console.log("unavailable clicked item");
+            showSpeech("unavailable clicked item");
             // do something when it doesn't have a case
             break;
     }
 }
 const mainCharacterSpeech = document.getElementById(textBubbleMC);
-function showSpeech(dialog){
-    mainCharacterSpeech.innerText = dialog; 
+
+function showSpeech(dialog) {
+    mainCharacterSpeech.innerText = dialog;
 }
