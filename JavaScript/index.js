@@ -26,6 +26,7 @@ gameWindow.onclick = function (e) {
             pauseAudio();
             // characterAudio.play();
             showSpeech("this is door one");
+            console.log(" butaehfiuhji");
             // something insert here
             break;
 

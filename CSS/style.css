@@ -47,17 +47,21 @@ body {
 }
 
 #doorOne {
-    top: 722px;
-    left: 45px;
+    top: 482px;
+    left: 482px;
     width: 42px;
     height: 40px;
+
+    background-color: magenta;
 }
 
 #doorTwo {
     top: 723px;
-    left: 194px;
+    left: 22px;
     width: 42px;
     height: 40px;
+
+    background-color: magenta;
 }
 
 .messageBox {
