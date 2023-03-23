@@ -12,6 +12,7 @@ gameWindow.onclick = function (e) {
     var rect = gameWindow.getBoundingClientRect();
     var x = e.clientX - rect.left;
     var y = e.clientY - rect.top;
+    playAudio();
     mainCharacter.style.left = x - offsetCharacter + "px";
     mainCharacter.style.top = y - offsetCharacter + "px";
 
@@ -22,17 +23,20 @@ gameWindow.onclick = function (e) {
 
     switch (e.target.id) {
         case "doorOne":
+            pauseAudio();
             // characterAudio.play();
             showSpeech("this is door one");
             // something insert here
             break;
 
         case "doorTwo":
+            pauseAudio();
             showSpeech("this is door two");
             // something insert here
             break;
 
         default:
+            playAudio();
             hideSpeech();
             // do something when it doesn't have a case
             break;
@@ -47,4 +51,14 @@ function showSpeech(dialog) {
 function hideSpeech() {
     mainCharacterSpeech.style.opacity = 0;
     mainCharacterSpeech.innerHTML = "...";
+}
+
+var x = document.getElementById("characterAudio");
+
+function playAudio() {
+  x.play();
+}
+
+function pauseAudio() {
+  x.pause();
 }

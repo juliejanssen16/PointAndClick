@@ -65,27 +65,29 @@ body {
     background: #dedbdb;
     border-radius: 60px;
     color: #000;
-    padding: 6px;
+    padding: 6px 6px 6px 30px;
     font-size: 12px;
-    left: 8px;
-    top: -5px;
+    left: 80px;
     opacity: 0;
+    width: 400px;
     transition: all 1s ease-in-out;
 }
 
-.messageBoxAfter {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 15px;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top-color: #ffffff;
-    border-bottom: 0;
-    border-left: 0;
-    margin-left: -5px;
-    margin-bottom: -10px;
+#dialogBottom {
+    height: 64px;
+    bottom: 0px;
+    left: 0px;
 }
 
-#mainCharacterSpeech {}
+#bottomBarColored {
+    position: absolute;
+    height: 64px;
+    width: 800px;
+    left: 0px;
+    background-color: hotpink;
+    bottom: 0px;
+}
+#heroMC{
+    position: absolute;
+    bottom: 0px;
+}
