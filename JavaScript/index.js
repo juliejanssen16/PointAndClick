@@ -33,13 +33,18 @@ gameWindow.onclick = function (e) {
             break;
 
         default:
-            showSpeech("unavailable clicked item");
+            hideSpeech();
             // do something when it doesn't have a case
             break;
     }
 }
-const mainCharacterSpeech = document.getElementById(textBubbleMC);
+const mainCharacterSpeech = document.getElementById("textBubbleMC");
 
 function showSpeech(dialog) {
-    mainCharacterSpeech.innerText = dialog;
+    mainCharacterSpeech.style.opacity = 1;
+    mainCharacterSpeech.innerHTML = dialog;
+}
+function hideSpeech() {
+    mainCharacterSpeech.style.opacity = 0;
+    mainCharacterSpeech.innerHTML = "...";
 }

@@ -51,7 +51,6 @@ body {
     left: 45px;
     width: 42px;
     height: 40px;
-    background-color: white;
 }
 
 #doorTwo {
@@ -59,7 +58,6 @@ body {
     left: 194px;
     width: 42px;
     height: 40px;
-    background-color: white;
 }
 
 .messageBox {
@@ -71,6 +69,8 @@ body {
     font-size: 12px;
     left: 8px;
     top: -5px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
 }
 
 .messageBoxAfter {
@@ -87,3 +87,5 @@ body {
     margin-left: -5px;
     margin-bottom: -10px;
 }
+
+#mainCharacterSpeech {}
