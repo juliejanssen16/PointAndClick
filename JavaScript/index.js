@@ -48,9 +48,10 @@ const mainCharacterSpeech = document.getElementById("textBubbleMC");
 function showSpeech(dialog) {
     mainCharacterSpeech.style.opacity = 1;
     mainCharacterSpeech.innerHTML = dialog;
+    setTimeout(hideSpeech, 5000);
 }
 function hideSpeech() {
-    mainCharacterSpeech.style.opacity = 1;
+    mainCharacterSpeech.style.opacity = 0;
     mainCharacterSpeech.innerHTML = "...";
 }
 
