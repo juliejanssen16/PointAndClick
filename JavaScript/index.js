@@ -27,14 +27,14 @@ gameWindow.onclick = function (e) {
         case "doorOne":
             pauseAudio();
             // characterAudio.play();
-            showSpeech("It's locked, sorry");
+            showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
             console.log(" butaehfiuhji");
             // something insert here
             break;
 
         case "doorTwo":
             pauseAudio();
-            showSpeech("It's locked, sorry");
+            showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
             // something insert here
             break;
 
@@ -47,17 +47,22 @@ gameWindow.onclick = function (e) {
 }
 const mainCharacterSpeech = document.getElementById("textBubbleMC");
 
-function showSpeech(dialog) {
-    //put a talking sound and make it play                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    mainCharacterSpeech.style.opacity = 1;
-    mainCharacterSpeech.innerHTML = dialog;
+function showSpeech(targetBubble, targetAudio, dialog) {
+    //put a talking sound                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    targetBubble.style.opacity = 1;
+    targetBubble.innerHTML = dialog;
     setTimeout(hideSpeech, 5 * sec);
+    targetAudio.currentTime = 0;
+    targetAudio.play();
 }
 function hideSpeech() {
     mainCharacterSpeech.style.opacity = 0;
     mainCharacterSpeech.innerHTML = "...";
-    //put a talking sound and make it stop after the delay !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    characterAudio.pause();
+    //put and sound make it stop after the delay !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
+const counterSpeech = document.getElementById("counterSpeech");
+showSpeech(counterSpeech, characterAudio, "Hello sweetheart!");
 
 var x = document.getElementById("characterAudio");
 
