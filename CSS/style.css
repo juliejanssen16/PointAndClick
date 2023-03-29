@@ -113,3 +113,10 @@ body {
     position: absolute;
     bottom: 0px;
 }
+
+#targetSomething {
+    top: 401px;
+    left: 740px;
+    width: 61px;
+    height: 64px;
+}

@@ -2,63 +2,75 @@ document.getElementById("mainTitle").innerText = "Point and click adventure";
 document.getElementById("mainTitle").style.textAlign = "center";
 
 const sec = 1000;
-
+const mainCharacterSpeech = document.getElementById("textBubbleMC");
 const offsetCharacter = 16;
-
+const targetAudio = document.getElementById("targetAudio");
 const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
-
 const characterAudio = document.getElementById("characterAudio");
+const counterCharacter = document.getElementById("counterCharacter");
 
 gameWindow.onclick = function (e) {
-    var rect = gameWindow.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var y = e.clientY - rect.top;
-    playAudio();
-    mainCharacter.style.left = x - offsetCharacter + "px";
-    mainCharacter.style.top = y - offsetCharacter + "px";
+    if (mainCharacterSpeech.style.opacity == 0 && counterSpeech.style.opacity == 0) {
+        var rect = gameWindow.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        playAudio();
+        mainCharacter.style.left = x - offsetCharacter + "px";
+        mainCharacter.style.top = y - offsetCharacter + "px";
 
-    console.log(x);
+        console.log(x);
 
-    //console.log(e.target.id);
-    showSpeech("Does this work?");
+        //console.log(e.target.id);
+        //showSpeech("Does this work?");
 
-    switch (e.target.id) {
-        case "doorOne":
-            pauseAudio();
-            // characterAudio.play();
-            showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
-            console.log(" butaehfiuhji");
-            // something insert here
-            break;
+        switch (e.target.id) {
+            case "doorOne":
+                pauseAudio();
+                // characterAudio.play();
+                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
+                console.log(" butaehfiuhji");
+                // something insert here
+                break;
 
-        case "doorTwo":
-            pauseAudio();
-            showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
-            // something insert here
-            break;
+            case "doorTwo":
+                pauseAudio();
+                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
+                // something insert here
+                break;
 
-        default:
-            playAudio();
-            hideSpeech();
-            // do something when it doesn't have a case
-            break;
+            case "targetSomething":
+                pauseAudio();
+                showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :)");
+                // something insert here
+                setTimeout(showSpeech, 5 * sec);
+                break;
+
+            default:
+                playAudio();
+                hideSpeech();
+                // do something when it doesn't have a case
+                break;
+        }
     }
 }
-const mainCharacterSpeech = document.getElementById("textBubbleMC");
+
 
 function showSpeech(targetBubble, targetAudio, dialog) {
     //put a talking sound                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     targetBubble.style.opacity = 1;
     targetBubble.innerHTML = dialog;
-    setTimeout(hideSpeech, 5 * sec);
+    setTimeout(hideSpeech, 5 * sec, targetBubble, targetAudio);
     targetAudio.currentTime = 0;
     targetAudio.play();
 }
-function hideSpeech() {
-    mainCharacterSpeech.style.opacity = 0;
-    mainCharacterSpeech.innerHTML = "...";
-    characterAudio.pause();
+function hideSpeech(targetBubble, targetAudio) {
+    // mainCharacterSpeech.style.opacity = 0;
+    //mainCharacterSpeech.innerHTML = "...";
+    //characterAudio.pause();
+    targetBubble.style.opacity = 0;
+    targetBubble.innerHTML = "...";
+    targetAudio.pause();
     //put and sound make it stop after the delay !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 const counterSpeech = document.getElementById("counterSpeech");
