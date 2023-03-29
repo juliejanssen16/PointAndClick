@@ -61,14 +61,13 @@ body {
 }
 
 .messageBox {
-    position: relative;
-    background: #dedbdb;
+    background: #ffffff;
     border-radius: 60px;
     color: #000;
-    padding: 6px 6px 6px 30px;
+    padding: 5px 5px 5px 20px;
     font-size: 12px;
     opacity: 0;
-    width: 400px;
+    width: 250px;
     transition: all 1s ease-in-out;
 }
 
@@ -82,6 +81,12 @@ body {
     top: 0px;
 }
 
+#counterCharacter {
+    top: 0px;
+    right: 0px;
+    opacity: 0;
+}
+
 #dialogBottom {
     height: 64px;
     bottom: 0px;
@@ -91,6 +96,8 @@ body {
 
 #setMainDialog {
     position: relative;
+    height: 64px;
+    width: 800px;
 }
 
 #bottomBarColored {
@@ -105,10 +112,4 @@ body {
 #heroMC {
     position: absolute;
     bottom: 0px;
-}
-
-#counterCharacter {
-    top: 0px;
-    right: 0px;
-    opacity: 0;
 }
