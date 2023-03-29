@@ -1,6 +1,8 @@
 document.getElementById("mainTitle").innerText = "Point and click adventure";
 document.getElementById("mainTitle").style.textAlign = "center";
 
+const sec = 1000;
+
 const offsetCharacter = 16;
 
 const mainCharacter = document.getElementById("mainCharacter");
@@ -48,11 +50,12 @@ const mainCharacterSpeech = document.getElementById("textBubbleMC");
 function showSpeech(dialog) {
     mainCharacterSpeech.style.opacity = 1;
     mainCharacterSpeech.innerHTML = dialog;
-    setTimeout(hideSpeech, 5000);
+    setTimeout(hideSpeech, 5 * sec);
 }
 function hideSpeech() {
     mainCharacterSpeech.style.opacity = 0;
     mainCharacterSpeech.innerHTML = "...";
+    //put a talking sound and make it stop after the delay !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 var x = document.getElementById("characterAudio");
