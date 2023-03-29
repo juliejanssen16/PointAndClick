@@ -48,6 +48,7 @@ gameWindow.onclick = function (e) {
 const mainCharacterSpeech = document.getElementById("textBubbleMC");
 
 function showSpeech(dialog) {
+    //put a talking sound and make it play                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     mainCharacterSpeech.style.opacity = 1;
     mainCharacterSpeech.innerHTML = dialog;
     setTimeout(hideSpeech, 5 * sec);
