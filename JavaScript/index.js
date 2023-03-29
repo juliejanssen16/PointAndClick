@@ -25,14 +25,14 @@ gameWindow.onclick = function (e) {
         case "doorOne":
             pauseAudio();
             // characterAudio.play();
-            showSpeech("this is door one");
+            showSpeech("It's locked, sorry");
             console.log(" butaehfiuhji");
             // something insert here
             break;
 
         case "doorTwo":
             pauseAudio();
-            showSpeech("this is door two");
+            showSpeech("It's locked, sorry");
             // something insert here
             break;
 
