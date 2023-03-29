@@ -50,16 +50,16 @@ function showSpeech(dialog) {
     mainCharacterSpeech.innerHTML = dialog;
 }
 function hideSpeech() {
-    mainCharacterSpeech.style.opacity = 0;
+    mainCharacterSpeech.style.opacity = 1;
     mainCharacterSpeech.innerHTML = "...";
 }
 
 var x = document.getElementById("characterAudio");
 
 function playAudio() {
-  x.play();
+    x.play();
 }
 
 function pauseAudio() {
-  x.pause();
+    x.pause();
 }

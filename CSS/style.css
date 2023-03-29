@@ -20,7 +20,7 @@ body {
     height: 608px;
     grid-column-start: 2;
     grid-row-start: 2;
-    background-color: blue;
+    background-color: rgb(247, 171, 236);
 }
 
 .background {
@@ -71,12 +71,13 @@ body {
     width: 400px;
     transition: all 1s ease-in-out;
 }
-#textBubbleMC{
+
+#textBubbleMC {
     left: 80px;
     top: 0px;
 }
 
-#counterSpeech{
+#counterSpeech {
     right: 80px;
     top: 0px;
 }
@@ -85,6 +86,11 @@ body {
     height: 64px;
     bottom: 0px;
     left: 0px;
+
+}
+
+#setMainDialog {
+    position: relative;
 }
 
 #bottomBarColored {
@@ -95,7 +101,14 @@ body {
     background-color: hotpink;
     bottom: 0px;
 }
-#heroMC{
+
+#heroMC {
     position: absolute;
     bottom: 0px;
+}
+
+#counterCharacter {
+    top: 0px;
+    right: 0px;
+    opacity: 0;
 }
