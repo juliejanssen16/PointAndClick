@@ -14,6 +14,7 @@ const inventoryList = document.getElementById("inventoryList");
 let moneyUser = 1000;
 let socialSkills = 0;
 const walkingCharacter = document.getElementById("walkingCharacter");
+let balance = [];
 
 gameWindow.onclick = function (e) {
     if (mainCharacterSpeech.style.opacity == 0 && counterSpeech.style.opacity == 0) {
@@ -37,6 +38,7 @@ gameWindow.onclick = function (e) {
                 socialSkills = socialSkills + 5;
                 console.log(moneyUser);
                 console.log(socialSkills);
+                //showMoney();
                 //console.log(" butaehfiuhji");
                 // something insert here
                 break;
@@ -47,6 +49,7 @@ gameWindow.onclick = function (e) {
                 socialSkills = socialSkills + 5;
                 console.log(moneyUser);
                 console.log(socialSkills);
+                //showMoney();
                 // something insert here
                 break;
 
@@ -67,6 +70,8 @@ gameWindow.onclick = function (e) {
                 }
                 // pauseAudio();
                 setTimeout(showSpeech, 5 * sec);
+                //showMoney();
+                getItemTwo(5, "money4");
                 break;
 
             case "doorThree":
@@ -89,6 +94,8 @@ gameWindow.onclick = function (e) {
                     console.log(moneyUser);
                     console.log(socialSkills);
                     setTimeout(function () { counterCharacter.style.opacity = 0; }, 50 * sec);
+                    //showMoney();
+                    getItemTwo(100, "money3");
                 }
                 else {
                     //pauseAudio();
@@ -104,6 +111,8 @@ gameWindow.onclick = function (e) {
                     console.log(socialSkills);
                     getItem("strawberries", "strawberries");
                     setTimeout(function () { counterCharacter.style.opacity = 0; }, 22 * sec);
+                    //showMoney();
+                    getItemTwo(30, "money2");
                 }
                 break;
 
@@ -120,9 +129,12 @@ gameWindow.onclick = function (e) {
                 console.log(moneyUser);
                 console.log(socialSkills);
                 setTimeout(function () { counterCharacter.style.opacity = 0; }, 17 * sec);
-                break
+                //showMoney();
+                getItemTwo(15, "money1");
+                break;
 
             default:
+                //showMoney();
                 // playAudio();
                 //hideSpeech(targetBubble, targetAudio);
                 // do something when it doesn't have a case
@@ -195,7 +207,23 @@ function removeItem(itemName, itemId) {
     document.getElementById(itemId).remove();
 }
 
-function showMoney(moneyUserTwo) {
-    moneyUserTwo = 1000;
-    document.getElementById("dollarSign").innerHTML(moneyUserTwo);
+function getItemTwo(itemNameTwo, itemIdTwo) {
+    if (!checkItemTwo(itemNameTwo)) {
+        balance.push(itemNameTwo);
+        console.log(balance);
+        showItemTwo(itemNameTwo, itemIdTwo);
+    }
+    console.log(balance);
 }
+
+function checkItemTwo(itemTwo) {
+    return balance.includes(itemTwo);
+}
+
+function showItemTwo(itemNameTwo, itemIdTwo) {
+    let listItemTwo = document.createElement("li");
+    listItemTwo.id = itemIdTwo;
+    listItemTwo.appendChild(document.createTextNode(itemNameTwo));
+    balanceList.appendChild(listItemTwo);
+}
+const balanceList = document.getElementById("inventoryListTwo");

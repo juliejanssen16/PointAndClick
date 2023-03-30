@@ -159,18 +159,21 @@ p {
     font-size: 12px;
 }
 
-#moneySystem {
-    width: 118px;
-    height: 30px;
-    left: 668px;
-    top: 7px;
-    background-color: rgb(185, 185, 185);
-    color: #000;
+#inventoryBoxTwo {
+    background-color: hotpink;
+    color: black;
+    width: 150px;
+    height: 150px;
+    border: black 2px solid;
+    left: 613px;
+    top: 10px;
+    padding: 10px;
 }
 
-#dollarSign {
-    color: #000;
+#inventoryListTwo {
+    list-style-type: square;
     padding: 4px;
-    height: 20px;
-    width: 100px;
+    margin-left: 10px;
+    color: black;
+    font-size: 12px;
 }
