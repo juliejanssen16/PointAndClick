@@ -27,6 +27,7 @@ gameWindow.onclick = function (e) {
         //showSpeech("Does this work?");
 
         switch (e.target.id) {
+            
             case "doorOne":
                 pauseAudio();
                 // characterAudio.play();
@@ -42,11 +43,15 @@ gameWindow.onclick = function (e) {
                 break;
 
             case "infoBord":
-                pauseAudio();
-                showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :)");
-                // something insert here
-                setTimeout(showSpeech, 2 * sec);
-
+                if (checkItem("information book")){
+                    showSpeech(counterSpeech, targetAudio, "Have a look in your information book, there you can see all of the information you need!");
+                }
+                else{
+                    showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :) <br> Here you can have an information book so you know when there will be something to do!");
+                    getItem("information book", "infoBook");
+                }
+                pauseAudio();                
+                setTimeout(showSpeech, 5 * sec);
                 break;
 
             default:
@@ -63,7 +68,7 @@ function showSpeech(targetBubble, targetAudio, dialog) {
     //put a talking sound                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     targetBubble.style.opacity = 1;
     targetBubble.innerHTML = dialog;
-    setTimeout(hideSpeech, 2 * sec, targetBubble, targetAudio);
+    setTimeout(hideSpeech, 5 * sec, targetBubble, targetAudio);
     targetAudio.currentTime = 0;
     targetAudio.play();
 }
