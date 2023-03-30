@@ -64,6 +64,12 @@ p {
     height: 40px;
 }
 
+#doorThree{
+    top: 476px;
+    left: 245px;
+    width: 42px;
+    height: 40px;
+}
 .messageBox {
     background: #ffffff;
     border-radius: 60px;

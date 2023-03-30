@@ -27,7 +27,7 @@ gameWindow.onclick = function (e) {
         //showSpeech("Does this work?");
 
         switch (e.target.id) {
-            
+
             case "doorOne":
                 pauseAudio();
                 // characterAudio.play();
@@ -43,15 +43,26 @@ gameWindow.onclick = function (e) {
                 break;
 
             case "infoBord":
-                if (checkItem("information book")){
+                if (checkItem("information book")) {
                     showSpeech(counterSpeech, targetAudio, "Have a look in your information book, there you can see all of the information you need!");
                 }
-                else{
+                else {
                     showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :) <br> Here you can have an information book so you know when there will be something to do!");
                     getItem("information book", "infoBook");
                 }
-                pauseAudio();                
+                pauseAudio();
                 setTimeout(showSpeech, 5 * sec);
+                break;
+
+            case "doorThree":
+                pauseAudio();
+                showSpeech(mainCharacterSpeech, characterAudio, "knock knock, is anyone home?");
+                showSpeech(counterSpeech, targetAudio, "Coming!");
+                showSpeech(counterSpeech, targetAudio, "Hello love, what's your name?");
+                showSpeech(mainCharacterSpeech, characterAudio, "Hello! My name is ");
+                showSpeech(counterSpeech, targetAudio, "That's a lovely name! <br> What can I do for you darling?");
+                showSpeech(mainCharacterSpeech, characterAudio, "Can I please have some");
+                getItem(requestGroceryStore, "RequestedItemGroceryStore");
                 break;
 
             default:
