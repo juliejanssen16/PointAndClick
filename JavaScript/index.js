@@ -9,6 +9,8 @@ const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
 const characterAudio = document.getElementById("characterAudio");
 const counterCharacter = document.getElementById("counterCharacter");
+let inventory = {};
+const inventoryList = document.getElementById("inventoryList");
 
 gameWindow.onclick = function (e) {
     if (mainCharacterSpeech.style.opacity == 0 && counterSpeech.style.opacity == 0) {
@@ -44,7 +46,7 @@ gameWindow.onclick = function (e) {
                 showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :)");
                 // something insert here
                 setTimeout(showSpeech, 2 * sec);
-                
+
                 break;
 
             default:
@@ -86,3 +88,26 @@ function playAudio() {
 function pauseAudio() {
     x.pause();
 }
+
+function getItem(itemName, itemId) {
+    if (!checkItem(itemName)) {
+        inventory.push(itemName);
+        console.log(inventory);
+    }
+    console.log(inventory);
+}
+
+function checkItem(item) {
+    return inventory.includes(item);
+}
+
+function showItem(itemName, itemId) {
+    let listItem = document.createElement("li");
+    listItem.id = itemId;
+    listItem.appendChild(document.createTextNode(itemName));
+    inventoryList.appendChild(listItem);
+}
+
+getItem("bread");
+getItem("milk");
+getItem("bread");
