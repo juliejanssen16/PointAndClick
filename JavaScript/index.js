@@ -9,7 +9,7 @@ const mainCharacter = document.getElementById("mainCharacter");
 const gameWindow = document.getElementById("gameWindow");
 const characterAudio = document.getElementById("characterAudio");
 const counterCharacter = document.getElementById("counterCharacter");
-let inventory = {};
+let inventory = [];
 const inventoryList = document.getElementById("inventoryList");
 
 gameWindow.onclick = function (e) {
@@ -51,7 +51,7 @@ gameWindow.onclick = function (e) {
 
             default:
                 playAudio();
-                hideSpeech();
+                //hideSpeech(targetBubble, targetAudio);
                 // do something when it doesn't have a case
                 break;
         }
