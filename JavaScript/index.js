@@ -93,6 +93,7 @@ function getItem(itemName, itemId) {
     if (!checkItem(itemName)) {
         inventory.push(itemName);
         console.log(inventory);
+        showItem(itemName, itemId);
     }
     console.log(inventory);
 }
@@ -108,6 +109,15 @@ function showItem(itemName, itemId) {
     inventoryList.appendChild(listItem);
 }
 
-getItem("bread");
-getItem("milk");
-getItem("bread");
+getItem("bannana bread", "bannanaBread");
+getItem("cold milk", "coldMilk");
+getItem("sun flower", "sunFlower");
+removeItem("cold milk", "coldMilk");
+
+function removeItem(itemName,itemId){
+    inventory = inventory.filter (function(newInventory){
+        return newInventory !== itemName;
+        
+    });
+    document.getElementById(itemId).remove();
+}
