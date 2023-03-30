@@ -6,6 +6,10 @@ body {
     grid-template-rows: auto auto;
 }
 
+p{
+    margin: 0px;
+    font-size: 14px;
+}
 
 
 #mainTitle {
@@ -85,6 +89,7 @@ body {
     top: 0px;
     right: 0px;
     opacity: 0;
+    transition: all 1s ease-in-out;
 }
 
 #dialogBottom {
@@ -119,4 +124,22 @@ body {
     left: 740px;
     width: 61px;
     height: 64px;
+}
+
+#inventoryBox{
+    background-color: hotpink;
+    color: black;
+    width: 150px;
+    height: 150px;
+    border: black 2px solid;
+    left: 10px;
+    top: 10px;
+    padding: 10px;
+}
+#inventoryList{
+    list-style-type: square;
+    padding: 0px;
+    margin: 0px, 0px, 0px, 14px;
+    color: black;
+    font-size: 12px;
 }

@@ -28,22 +28,23 @@ gameWindow.onclick = function (e) {
             case "doorOne":
                 pauseAudio();
                 // characterAudio.play();
-                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
+                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, I can't get in!");
                 console.log(" butaehfiuhji");
                 // something insert here
                 break;
 
             case "doorTwo":
                 pauseAudio();
-                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, sorry");
+                showSpeech(mainCharacterSpeech, characterAudio, "It's locked, I can't get in!");
                 // something insert here
                 break;
 
-            case "targetSomething":
+            case "infoBord":
                 pauseAudio();
                 showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :)");
                 // something insert here
-                setTimeout(showSpeech, 5 * sec);
+                setTimeout(showSpeech, 2 * sec);
+                
                 break;
 
             default:
@@ -60,7 +61,7 @@ function showSpeech(targetBubble, targetAudio, dialog) {
     //put a talking sound                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     targetBubble.style.opacity = 1;
     targetBubble.innerHTML = dialog;
-    setTimeout(hideSpeech, 5 * sec, targetBubble, targetAudio);
+    setTimeout(hideSpeech, 2 * sec, targetBubble, targetAudio);
     targetAudio.currentTime = 0;
     targetAudio.play();
 }
