@@ -56,13 +56,15 @@ gameWindow.onclick = function (e) {
 
             case "doorThree":
                 pauseAudio();
-                showSpeech(mainCharacterSpeech, characterAudio, "knock knock, is anyone home?");
-                showSpeech(counterSpeech, targetAudio, "Coming!");
-                showSpeech(counterSpeech, targetAudio, "Hello love, what's your name?");
-                showSpeech(mainCharacterSpeech, characterAudio, "Hello! My name is ");
-                showSpeech(counterSpeech, targetAudio, "That's a lovely name! <br> What can I do for you darling?");
-                showSpeech(mainCharacterSpeech, characterAudio, "Can I please have some");
-                getItem(requestGroceryStore, "RequestedItemGroceryStore");
+                setTimeout(function () { counterCharacter.style.opacity = 1; }, 1 * sec);
+                setTimeout(showSpeech, 4 * sec, mainCharacterSpeech, targetAudio, "knock knock, is anyone home?");
+                setTimeout(showSpeech, 6 * sec, counterSpeech, targetAudio, "Coming!");
+                setTimeout(showSpeech, 10 * sec, counterSpeech, targetAudio, "Hello love, what's your name?");
+                setTimeout(showSpeech, 14 * sec, mainCharacterSpeech, counterAudio, "Hello! My name is Ghost");
+                setTimeout(showSpeech, 16 * sec, counterSpeech, counterAudio, "That's a lovely name! <br> What can I do for you darling?");
+                setTimeout(showSpeech, 18 * sec, mainCharacterSpeech, counterAudio, "Can I please have some stawberries?");
+                getItem("Strawberries", "strawberries");
+                setTimeout(function () { counterCharacter.style.opacity = 0; }, 34 * sec);
                 break;
 
             default:
