@@ -114,10 +114,10 @@ getItem("cold milk", "coldMilk");
 getItem("sun flower", "sunFlower");
 removeItem("cold milk", "coldMilk");
 
-function removeItem(itemName,itemId){
-    inventory = inventory.filter (function(newInventory){
+function removeItem(itemName, itemId) {
+    inventory = inventory.filter(function (newInventory) {
         return newInventory !== itemName;
-        
+
     });
     document.getElementById(itemId).remove();
 }
