@@ -15,6 +15,7 @@ let moneyUser = 1000;
 let socialSkills = 0;
 const walkingCharacter = document.getElementById("walkingCharacter");
 let balance = [];
+let itemTwoCount = 0;
 
 gameWindow.onclick = function (e) {
     if (mainCharacterSpeech.style.opacity == 0 && counterSpeech.style.opacity == 0) {
@@ -56,15 +57,18 @@ gameWindow.onclick = function (e) {
             case "infoBord":
                 if (checkItem("information book")) {
                     showSpeech(counterSpeech, targetAudio, "Have a look in your information book, there you can see all of the information you need!");
-                    socialSkills = socialSkills + 5;
-                    console.log(moneyUser);
-                    console.log(socialSkills);
+                   // socialSkills = socialSkills + 5;
+                    //console.log(moneyUser);
+                    itemTwoCount+5;
+                    setTimeout(removeItem, 4 * sec, "information book");
+                    //console.log(socialSkills);
                 }
                 else {
                     showSpeech(counterSpeech, targetAudio, "Go explore! <br> there are no special events today :) <br> Here you can have an information book so you know when there will be something to do!");
                     getItem("information book", "infoBook");
                     socialSkills = socialSkills + 5;
                     moneyUser = moneyUser + 45;
+                    itemTwoCount+5;
                     console.log(moneyUser);
                     console.log(socialSkills);
                 }
@@ -95,6 +99,7 @@ gameWindow.onclick = function (e) {
                     console.log(socialSkills);
                     setTimeout(function () { counterCharacter.style.opacity = 0; }, 50 * sec);
                     //showMoney();
+                    itemTwoCount+25;
                     getItemTwo(100, "money3");
                 }
                 else {
@@ -112,6 +117,7 @@ gameWindow.onclick = function (e) {
                     getItem("strawberries", "strawberries");
                     setTimeout(function () { counterCharacter.style.opacity = 0; }, 22 * sec);
                     //showMoney();
+                    itemTwoCount-3;
                     getItemTwo(30, "money2");
                 }
                 break;
@@ -130,7 +136,8 @@ gameWindow.onclick = function (e) {
                 console.log(socialSkills);
                 setTimeout(function () { counterCharacter.style.opacity = 0; }, 17 * sec);
                 //showMoney();
-                getItemTwo(15, "money1");
+                itemTwoCount+10;
+                getItemTwo(itemTwoCount, "money1");
                 break;
 
             default:
@@ -227,3 +234,11 @@ function showItemTwo(itemNameTwo, itemIdTwo) {
     balanceList.appendChild(listItemTwo);
 }
 const balanceList = document.getElementById("inventoryListTwo");
+
+function removeItemTwo(itemNameTwo, itemIdTwo) {
+    balance = balance.filter(function (newBalance) {
+        return newBalance !== itemNameTwo;
+
+    });
+    document.getElementById(itemIdTwo).remove();
+}
